@@ -51,6 +51,7 @@ extern void *ISO_png;
 extern void *UL_png;
 extern void *CD_png;
 extern void *DVD_png;
+extern void *APPS_png;
 extern void *Aspect_s_png;
 extern void *Aspect_w_png;
 extern void *Aspect_w1_png;
@@ -149,6 +150,7 @@ static texture_t internalDefault[TEXTURES_COUNT] = {
     {UL_FORMAT, "UL", &UL_png},
     {CD_MEDIA, "CD", &CD_png},
     {DVD_MEDIA, "DVD", &DVD_png},
+    {APP_MEDIA, "APP", &APPS_png},
     {ASPECT_STD, "Aspect_s", &Aspect_s_png},
     {ASPECT_WIDE, "Aspect_w", &Aspect_w_png},
     {ASPECT_WIDE1, "Aspect_w1", &Aspect_w1_png},
