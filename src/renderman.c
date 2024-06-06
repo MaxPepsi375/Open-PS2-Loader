@@ -363,7 +363,7 @@ void rmDrawOverlayPixmap(GSTEXTURE *overlay, int x, int y, short aligned, int w,
         gsGlobal->PrimAlphaEnable = GS_SETTING_OFF;
 
     gsKit_TexManager_bind(gsGlobal, inlay);
-    gsKit_prim_triangle_texture_3d(gsGlobal, inlay,
+    gsKit_prim_quad_goraud_texture_3d(gsGlobal, inlay,
                             quad.ul.x + ulx + fRenderXOff, quad.ul.y + uly + fRenderYOff,
                             0.0f, 0.0f,
                             quad.ul.x + urx + fRenderXOff, quad.ul.y + ury + fRenderYOff,
@@ -371,7 +371,7 @@ void rmDrawOverlayPixmap(GSTEXTURE *overlay, int x, int y, short aligned, int w,
                             quad.ul.x + blx + fRenderXOff, quad.ul.y + bly + fRenderYOff,
                             0.0f, inlay->Height,
                             quad.ul.x + brx + fRenderXOff, quad.ul.y + bry + fRenderYOff,
-                            inlay->Width, inlay->Height, order, gDefaultCol);
+                            inlay->Width, inlay->Height, order, gDefaultCol, gDefaultCol, gDefaultCol, gDefaultCol);
     order++;
 
     rmDrawQuad(&quad);
