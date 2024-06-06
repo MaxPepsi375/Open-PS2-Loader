@@ -365,7 +365,7 @@ void rmDrawOverlayPixmap(GSTEXTURE *overlay, int x, int y, short aligned, int w,
     gsKit_TexManager_bind(gsGlobal, inlay);
     gsKit_prim_quad_texture(gsGlobal, inlay,
                             quad.ul.x + ulx + fRenderXOff, quad.ul.y + uly + fRenderYOff,
-                            100.0f, 0.0f,
+                            0.0f, 100.0f,
                             quad.ul.x + urx + fRenderXOff, quad.ul.y + ury + fRenderYOff,
                             inlay->Width, 0.0f,
                             quad.ul.x + blx + fRenderXOff, quad.ul.y + bly + fRenderYOff,
