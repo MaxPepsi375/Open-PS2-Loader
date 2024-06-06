@@ -363,7 +363,7 @@ void rmDrawOverlayPixmap(GSTEXTURE *overlay, int x, int y, short aligned, int w,
         gsGlobal->PrimAlphaEnable = GS_SETTING_OFF;
 
     gsKit_TexManager_bind(gsGlobal, inlay);
-    gsKit_prim_quad_texture(gsGlobal, inlay,
+    gsKit_prim_triangle_texture_3d(gsGlobal, inlay,
                             quad.ul.x + ulx + fRenderXOff, quad.ul.y + uly + fRenderYOff,
                             0.0f, 0.0f,
                             quad.ul.x + urx + fRenderXOff, quad.ul.y + ury + fRenderYOff,
