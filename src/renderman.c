@@ -373,13 +373,7 @@ void rmDrawOverlayPixmap(GSTEXTURE *overlay, int x, int y, short aligned, int w,
                             quad.ul.x + brx + fRenderXOff, quad.ul.y + bry + fRenderYOff, 5,
                             inlay->Width, inlay->Height, gDefaultCol);
 
-(GSGLOBAL *gsGlobal, GSTEXTURE *Texture,
-				float x1, float y1, int iz1, float u1, float v1,
-				float x2, float y2, int iz2, float u2, float v2,
-				float x3, float y3, int iz3, float u3, float v3,
-				float x4, float y4, int iz4, float u4, float v4, u64 color);
-
-    order++;
+    //order++;
 
     rmDrawQuad(&quad);
 }
