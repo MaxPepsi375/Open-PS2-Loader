@@ -357,23 +357,23 @@ void rmDrawOverlayPixmap(GSTEXTURE *overlay, int x, int y, short aligned, int w,
     bly = Y_SCALE(bly);
     bry = Y_SCALE(bry);
 
-    //if ((inlay->PSM == GS_PSM_CT32) || (inlay->Clut && inlay->ClutPSM == GS_PSM_CT32))
+    if ((inlay->PSM == GS_PSM_CT32) || (inlay->Clut && inlay->ClutPSM == GS_PSM_CT32))
         gsGlobal->PrimAlphaEnable = GS_SETTING_ON;
-    //else
-      //  gsGlobal->PrimAlphaEnable = GS_SETTING_OFF;
+    else
+        gsGlobal->PrimAlphaEnable = GS_SETTING_OFF;
 
     gsKit_TexManager_bind(gsGlobal, inlay);
-    gsKit_prim_quad_texture_3d(gsGlobal, inlay,
-                            quad.ul.x + ulx + fRenderXOff, quad.ul.y + uly + fRenderYOff, -100,
-                            100.0f, 100.0f,
-                            quad.ul.x + urx + fRenderXOff, quad.ul.y + ury + fRenderYOff, -100,
-                            inlay->Width, 100.0f,
-                            quad.ul.x + blx + fRenderXOff, quad.ul.y + bly + fRenderYOff, -100,
-                            100.0f, inlay->Height,
-                            quad.ul.x + brx + fRenderXOff, quad.ul.y + bry + fRenderYOff, -100,
-                            inlay->Width, inlay->Height, gDefaultCol);
+    gsKit_prim_quad_texture(gsGlobal, inlay,
+                            quad.ul.x + ulx + fRenderXOff, quad.ul.y + uly + fRenderYOff,
+                            100.0f, 0.0f,
+                            quad.ul.x + urx + fRenderXOff, quad.ul.y + ury + fRenderYOff,
+                            inlay->Width, 0.0f,
+                            quad.ul.x + blx + fRenderXOff, quad.ul.y + bly + fRenderYOff,
+                            0.0f, inlay->Height,
+                            quad.ul.x + brx + fRenderXOff, quad.ul.y + bry + fRenderYOff,
+                            inlay->Width, inlay->Height, order, gDefaultCol);
 
-    //order++;
+    order++;
 
     rmDrawQuad(&quad);
 }
